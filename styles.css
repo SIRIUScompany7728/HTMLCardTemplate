@@ -1,0 +1,413 @@
+/* ========================================
+   1. GLOBAL RESET
+======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  color: #0f172a;
+  background-color: #f8fafc;
+}
+
+/* ========================================
+   2. MAIN CONTAINER
+======================================== */
+
+.desktop {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+
+  width: 100%;
+  min-height: 100vh;
+  padding: 80px 6%;
+
+  background: linear-gradient(135deg, #111827 0%, #312e81 50%, #6d28d9 100%);
+}
+
+/* ========================================
+   3. TWINKLING STARS
+======================================== */
+
+.stars {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+
+  width: 3px;
+  height: 3px;
+
+  background-color: #ffffff;
+  border-radius: 50%;
+
+  box-shadow: 0 0 6px #ffffff, 0 0 12px #a5b4fc;
+
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+/* ========================================
+   4. STAR POSITIONS
+======================================== */
+
+.star:nth-child(1) {
+  top: 10%;
+  left: 12%;
+  animation-delay: 0s;
+}
+
+.star:nth-child(2) {
+  top: 25%;
+  left: 30%;
+  animation-delay: 0.5s;
+}
+
+.star:nth-child(3) {
+  top: 15%;
+  left: 75%;
+  animation-delay: 1s;
+}
+
+.star:nth-child(4) {
+  top: 80%;
+  left: 15%;
+  animation-delay: 1.5s;
+}
+
+.star:nth-child(5) {
+  top: 65%;
+  left: 85%;
+  animation-delay: 0.3s;
+}
+
+.star:nth-child(6) {
+  top: 40%;
+  left: 92%;
+  animation-delay: 0.8s;
+}
+
+.star:nth-child(7) {
+  top: 90%;
+  left: 55%;
+  animation-delay: 1.2s;
+}
+
+.star:nth-child(8) {
+  top: 8%;
+  left: 48%;
+  animation-delay: 0.7s;
+}
+
+.star:nth-child(9) {
+  top: 55%;
+  left: 5%;
+  animation-delay: 1.7s;
+}
+
+.star:nth-child(10) {
+  top: 35%;
+  left: 65%;
+  animation-delay: 0.4s;
+}
+
+.star:nth-child(11) {
+  top: 75%;
+  left: 40%;
+  animation-delay: 1.3s;
+}
+
+.star:nth-child(12) {
+  top: 20%;
+  left: 90%;
+  animation-delay: 0.9s;
+}
+
+.star:nth-child(13) {
+  top: 95%;
+  left: 90%;
+  animation-delay: 1.8s;
+}
+
+.star:nth-child(14) {
+  top: 48%;
+  left: 48%;
+  animation-delay: 0.2s;
+}
+
+.star:nth-child(15) {
+  top: 5%;
+  left: 25%;
+  animation-delay: 1.4s;
+}
+
+/* ========================================
+   5. TWINKLE ANIMATION
+======================================== */
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.6);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.8);
+  }
+}
+
+/* ========================================
+   6. CARD
+======================================== */
+
+.card {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  flex: 1 1 280px;
+  width: 100%;
+  max-width: 369px;
+  min-height: 520px;
+
+  padding: 28px 24px 30px;
+
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05),
+    0 4px 10px rgba(15, 23, 42, 0.03);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* ========================================
+   7. CARD HOVER EFFECT
+======================================== */
+
+.card:hover {
+  transform: translateY(-10px);
+
+  border-color: #c7d2fe;
+
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1),
+    0 8px 16px rgba(15, 23, 42, 0.05);
+}
+
+/* ========================================
+   8. CARD IMAGE
+======================================== */
+
+.card-image {
+  display: block;
+
+  width: 100%;
+  height: 270px;
+
+  object-fit: contain;
+  object-position: center;
+
+  margin-bottom: 28px;
+}
+
+/* ========================================
+   9. CARD TITLE
+======================================== */
+
+.card-title {
+  width: 100%;
+
+  margin-bottom: 30px;
+
+  color: #0f172a;
+  font-size: 36px;
+  font-weight: 700;
+
+  text-align: center;
+  letter-spacing: -1.2px;
+}
+
+/* ========================================
+   10. CARD BUTTON
+======================================== */
+
+.card-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 220px;
+  min-height: 58px;
+
+  margin-top: auto;
+  padding: 12px 24px;
+
+  background-color: #fde52d;
+  color: #1e293b;
+
+  border: none;
+  border-radius: 12px;
+
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* ========================================
+   11. BUTTON HOVER
+======================================== */
+
+.card-button:hover {
+  background-color: #facc15;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 18px rgba(234, 179, 8, 0.25);
+}
+
+/* ========================================
+   12. BUTTON ACTIVE
+======================================== */
+
+.card-button:active {
+  transform: scale(0.97);
+}
+
+/* ========================================
+   13. BUTTON FOCUS
+======================================== */
+
+.card-button:focus-visible {
+  outline: 3px solid #6366f1;
+  outline-offset: 4px;
+}
+
+/* ========================================
+   14. RESPONSIVE TABLET
+======================================== */
+
+@media (max-width: 900px) {
+  .desktop {
+    gap: 28px;
+    padding: 60px 5%;
+  }
+
+  .card {
+    flex-basis: 280px;
+    min-height: 490px;
+  }
+
+  .card-image {
+    height: 240px;
+  }
+
+  .card-title {
+    font-size: 32px;
+  }
+}
+
+/* ========================================
+   15. RESPONSIVE MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .desktop {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    padding: 40px 20px;
+  }
+
+  .card {
+    flex: none;
+
+    width: 100%;
+    max-width: 400px;
+    min-height: 460px;
+
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+
+  .card-image {
+    height: 220px;
+    margin-bottom: 20px;
+  }
+
+  .card-title {
+    font-size: 30px;
+    margin-bottom: 24px;
+  }
+
+  .card-button {
+    max-width: 100%;
+    min-height: 54px;
+    font-size: 16px;
+  }
+}
+
+/* ========================================
+   16. SMALL MOBILE
+======================================== */
+
+@media (max-width: 360px) {
+  .desktop {
+    padding: 30px 14px;
+  }
+
+  .card {
+    min-height: 420px;
+    padding: 20px 16px;
+  }
+
+  .card-image {
+    height: 190px;
+  }
+
+  .card-title {
+    font-size: 26px;
+  }
+}
+
+/* ========================================
+   17. ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .star {
+    animation: none;
+    opacity: 0.7;
+  }
+
+  .card,
+  .card-button {
+    transition: none;
+  }
+}
